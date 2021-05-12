@@ -134,4 +134,18 @@ void deleteAtpos(Node** head,int pos)
 	Node* next = temp->next->next;
 	free(temp->next);
 	temp->next = next;
-}	
+}
+
+// length of the list
+int length(Node* head)
+{
+	int count = 0;
+	Node* current = head;
+	while(current != NULL)
+	{
+		count++;
+		current = current->next;
+	}
+	return count;
+}
+
