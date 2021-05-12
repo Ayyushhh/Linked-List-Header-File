@@ -149,3 +149,16 @@ int length(Node* head)
 	return count;
 }
 
+// search
+bool search(NOde* head, int x)
+{
+	Node* current = head;
+	while(current != NULL)
+	{
+		if(current->key == x)
+			return true;
+		current = current->next;
+	}
+	return false;
+}
+
