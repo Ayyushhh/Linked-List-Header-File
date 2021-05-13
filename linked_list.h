@@ -162,3 +162,35 @@ bool search(NOde* head, int x)
 	return false;
 }
 
+// print middle linked list 
+void printMiddle(Node* head)
+{
+	Node* slow = head;
+	Node* fast = head;
+	if(head!=NULL)
+	{
+		while(fast!=NULL && fast->next!=NULL)
+		{
+			fast = fast->next->next;
+			slow = slow->next;
+		}
+		cout<<slow->data<<endl;
+	}
+}
+
+// detect loop
+bool detectLoop(Node* head)
+{
+	Node* slow = head;
+	Node* fast = head;
+	while(slow && fast && fast->next)
+	{
+		slow = slow->next;
+		fast = fast->next->next;
+		if(slow = fast){
+			return true;
+		}
+	}
+	return false;
+}
+
